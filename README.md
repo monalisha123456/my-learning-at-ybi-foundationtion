@@ -1,2 +1,4 @@
 # my-learning-at-ybi-foundationtion
-artificial intelligence and data science
+i am learning at ybi foundation
+Full stack in AI and data science
+
