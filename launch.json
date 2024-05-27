@@ -1,0 +1,42 @@
+Assignment 1: Linear Regression for House Price Prediction
+
+To create a linear regressione model for predicting house prices using the Boston Housing dataset, follow these steps:
+
+1. *Load the Dataset:*
+   First, load the dataset from the provided URL:
+   python
+   import pandas as pd
+   url = 'https://github.com/YBIFoundation/Dataset/raw/main/Boston.csv'
+   data = pd.read_csv(url)
+   
+
+2. *Prepare the Data:*
+   Define the target variable y as the MEDV column and the features X as all other columns.
+   python
+   X = data.drop('MEDV', axis=1)
+   y = data['MEDV']
+   
+
+3. *Split the Data:*
+   Split the data into training and testing sets.
+   python
+   from sklearn.model_selection import train_test_split
+   X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+   
+
+4. *Build and Train the Model:*
+   Use the LinearRegression model from scikit-learn to train the model.
+   python
+   from sklearn.linear_model import LinearRegression
+   model = LinearRegression()
+   model.fit(X_train, y_train)
+   
+
+5. *Evaluate the Model:*
+   Evaluate the model's performance using metrics such as Mean Squared Error (MSE).
+   python
+   from sklearn.metrics import mean_squared_error
+   y_pred = model.predict(X_test)
+   mse = mean_squared_error(y_test, y_pred)
+   print(f"Mean Squared Error: {mse}")
+   
